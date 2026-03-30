@@ -6,7 +6,7 @@ function agregarUsuario() {
     let input = document.getElementById("nombre");
     let nombre = input.value;
 
-    if (nombre === "") {
+   if (nombre.trim() === "") {
         alert("Ingrese un nombre");
         return;
     }
