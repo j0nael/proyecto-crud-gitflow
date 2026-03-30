@@ -12,7 +12,7 @@ function agregarUsuario() {
     }
 
     if (editando) {
-        usuarios[indiceEditar] = nombre;
+       usuarios[indiceEditar] = nombre + " (editado)";
         editando = false;
         indiceEditar = -1;
     } else {
