@@ -6,13 +6,13 @@ function agregarUsuario() {
     let input = document.getElementById("nombre");
     let nombre = input.value;
 
-    if (nombre === "") {
+   if (nombre.trim() === "") {
         alert("Ingrese un nombre");
         return;
     }
 
     if (editando) {
-        usuarios[indiceEditar] = nombre;
+       usuarios[indiceEditar] = nombre + " (editado)";
         editando = false;
         indiceEditar = -1;
     } else {
@@ -37,12 +37,16 @@ function mostrarUsuarios() {
         `;
 
         lista.appendChild(li);
+        let contador = document.getElementById("contador");
+contador.textContent = "Total usuarios: " + usuarios.length;
     });
 }
 
 function eliminarUsuario(index) {
-    usuarios.splice(index, 1);
-    mostrarUsuarios();
+    if (confirm("¿Seguro que quieres eliminar?")) {
+        usuarios.splice(index, 1);
+        mostrarUsuarios();
+    }
 }
 
 function editarUsuario(index) {
