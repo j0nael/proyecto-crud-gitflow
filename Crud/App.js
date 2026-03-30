@@ -37,9 +37,10 @@ function mostrarUsuarios() {
         `;
 
         lista.appendChild(li);
-        let contador = document.getElementById("contador");
-contador.textContent = "Total usuarios: " + usuarios.length;
+        
     });
+    let contador = document.getElementById("contador");
+contador.textContent = "Total usuarios: " + usuarios.length;
 }
 
 function eliminarUsuario(index) {
