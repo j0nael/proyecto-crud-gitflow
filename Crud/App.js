@@ -43,8 +43,10 @@ contador.textContent = "Total usuarios: " + usuarios.length;
 }
 
 function eliminarUsuario(index) {
-    usuarios.splice(index, 1);
-    mostrarUsuarios();
+    if (confirm("¿Seguro que quieres eliminar?")) {
+        usuarios.splice(index, 1);
+        mostrarUsuarios();
+    }
 }
 
 function editarUsuario(index) {
